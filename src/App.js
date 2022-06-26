@@ -1,11 +1,14 @@
 // import logo from './logo.svg';
 import React, {Component} from 'react'
-import { Navbar,NavbarBrand } from "reactstrap";
+
 import Menu from "./components/MenuComponent";
 import "./App.css";
 import {DISHES} from './shared/dishes'
 import {COMMENTS} from './shared/Comments'
-
+import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
+import {BrowserRouter,Routes,Route} from'react-router-dom'
+import Home from './components/HomeComponent';
 
 class App extends Component{
   constructor(props) {
@@ -18,15 +21,17 @@ class App extends Component{
   }
   render(){
   return (
-    
-    <div className="App">
-      <Navbar dark color="primary">
-        <div className="container">
-          <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-        </div>
-      </Navbar>
-      <Menu dishes={this.state.dishes} comments={this.state.comments}/>
-    </div>
+    <BrowserRouter>
+ 
+     <Header/>
+
+    <Routes>
+      <Route path='/menu' element={<Menu dishes={this.state.dishes} comments={this.state.comments}/>}/>
+      <Route path='/home' element={<Home/>}/>
+    </Routes>
+      <Footer/>
+    </BrowserRouter>
+
   )}
 }
 
