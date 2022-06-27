@@ -1,0 +1,16 @@
+import { DISHES } from '../shared/dishes';
+import { COMMENTS } from '../shared/Comments';
+import { PROMOTIONS } from '../shared/promotions';
+import { LEADERS } from '../shared/leaders';
+
+
+export const initialState={
+    dishes: DISHES,  // lifting the state up
+    comments: COMMENTS, 
+    leaders: LEADERS, 
+    promotions: PROMOTIONS
+}
+
+export const Reducer=(state=initialState,action)=>{
+    return state
+}
