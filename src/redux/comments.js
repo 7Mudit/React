@@ -8,9 +8,9 @@ export const Comments = (
   action
 ) => {
   switch (action.type) {
-    case ActionTypes.ADD_COMMENTS:
+    case ActionTypes.displayComments:
         return { ...state, isLoading: false, errMess: null, comments: action.payload };
-        case ActionTypes.COMMENTS_FAILED:
+        case ActionTypes.failedComments:
             return {
               ...state,
               isLoading: false,
@@ -18,7 +18,7 @@ export const Comments = (
               comments: [],
             };
 
-    case ActionTypes.ADD_COMMENT:
+    case ActionTypes.displayComment:
       var comment = action.payload;
     //   console.log("Comment: ", comment);
       return {...state,comments:state.comments.concat(comment)};

@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import { baseUrl } from "../shared/baseUrl";
 import { Loading } from "./LoadingComponent";
-import { FadeTransform } from "react-animation-components";
+import { FadeTransform } from 'react-animation-components';
 
 function RenderCard({ item, isLoading, errMess }) {
   if (isLoading) {

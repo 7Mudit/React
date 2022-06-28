@@ -9,16 +9,16 @@ export const Dishes = (
   action
 ) => {
   switch (action.type) {
-    case ActionTypes.ADD_DISHES:
+    case ActionTypes.displayDishes:
         return { ...state, isLoading: false, errMess: null, dishes: action.payload };
-    case ActionTypes.DISHES_FAILED:
+    case ActionTypes.failedDishes:
       return {
         ...state,
         isLoading: false,
         errMess: action.payload,
         dishes: [],
       };
-    case ActionTypes.DISHES_LOADING:
+    case ActionTypes.loadDishes:
       return { ...state, isLoading: true, errMess: null, dishes: [] };
     default:
       return state;
